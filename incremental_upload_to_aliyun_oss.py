@@ -53,7 +53,7 @@ if __name__ == '__main__':
         if 'localDir' not in oss_config:
             raise ValueError('No localDir in oss_config.json')
         if not str(oss_config['localDir']).strip().endswith('/'):
-            raise ValueError('localDir must end with a slash, example: /Users/Poison/blog/public/')
+            raise ValueError('localDir must end with a slash, example: /root/testdir/')
 
     is_windows = False
     if os.name == 'nt':
