@@ -4,5 +4,5 @@
   "endpoint": "",
   "bucketName": "",
   "ossDomain": "",
-  "localDir": ""
+  "localDir": "/root/testdir/"
 }
