@@ -7,6 +7,9 @@ from concurrent.futures import ThreadPoolExecutor
 import oss2
 import requests
 
+import time
+ 
+localtime = time.asctime( time.localtime(time.time()) )
 
 def content_md5(local_file_path):
     with open(local_file_path, 'rb') as file:
@@ -29,7 +32,7 @@ def upload_file_to_aliyun_oss(local_file_path):
     if oss_response.status_code == 200 and content_md5(local_file_path) == oss_response.headers['Content-MD5']:
         return
 
-    print('uploading: ' + local_file_path)
+    print('[' + localtime + ']:' + 'uploading: ' + local_file_path)
     result = bucket.put_object_from_file(oss_object_key, local_file_path)
     if result.status != 200:
         print('upload error, response information: ' + str(result))
