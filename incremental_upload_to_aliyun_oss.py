@@ -9,8 +9,7 @@ import requests
 
 import time
  
-localtime = time.asctime( time.localtime(time.time()) )
-
+localtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 def content_md5(local_file_path):
     with open(local_file_path, 'rb') as file:
         m = hashlib.md5()
