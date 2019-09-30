@@ -43,19 +43,19 @@ if __name__ == '__main__':
     with open('oss_config.json') as oss_config_file:
         oss_config = json.load(oss_config_file)
         if 'accessKeyId' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No accessKeyId in oss_config.json')
+            raise ValueError('No accessKeyId in oss_config.json')
         if 'accessKeySecret' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No accessKeySecret in oss_config.json')
+            raise ValueError('No accessKeySecret in oss_config.json')
         if 'endpoint' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No endpoint in oss_config.json')
+            raise ValueError('No endpoint in oss_config.json')
         if 'bucketName' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No bucketName in oss_config.json')
+            raise ValueError('No bucketName in oss_config.json')
         if 'ossDomain' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No ossDomain in oss_config.json')
+            raise ValueError('No ossDomain in oss_config.json')
         if 'localDir' not in oss_config:
-            raise ValueError('[' + localtime + ']:' + 'No localDir in oss_config.json')
+            raise ValueError('No localDir in oss_config.json')
         if not str(oss_config['localDir']).strip().endswith('/'):
-            raise ValueError('[' + localtime + ']:' + 'localDir must end with a slash, example: /root/testdir/')
+            raise ValueError('localDir must end with a slash, example: /root/testdir/')
 
     is_windows = False
     if os.name == 'nt':
