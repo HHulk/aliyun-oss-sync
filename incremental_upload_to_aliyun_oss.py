@@ -40,7 +40,7 @@ def upload_file_to_aliyun_oss(local_file_path):
 
 if __name__ == '__main__':
     oss_config = None
-    with open('oss_config.json') as oss_config_file:
+    with open('/root/aliyun-oss-sync/oss_config.json') as oss_config_file:
         oss_config = json.load(oss_config_file)
         if 'accessKeyId' not in oss_config:
             raise ValueError('No accessKeyId in oss_config.json')
